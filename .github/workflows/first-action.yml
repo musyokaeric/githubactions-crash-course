@@ -1,5 +1,6 @@
 # Name of the workflow
 name: First Workflow
+# Events that trigger workflows: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 # Define when this workflow should be executed, and the event(s) that should trigger this workflow to run
 on: workflow_dispatch
 # Define the works that should be done
