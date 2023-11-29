@@ -1,0 +1,11 @@
+name: Output Information
+on: workflow_dispatch # run the workflow manually on github
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Github context
+        # object or collection of data with some general information about this workflow and the event trigger
+        # https://docs.github.com/en/actions/learn-github-actions/contexts
+        # https://docs.github.com/en/actions/learn-github-actions/expressions
+        run: echo "${{toJson(github)}}"
