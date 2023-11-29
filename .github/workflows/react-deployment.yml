@@ -19,6 +19,7 @@ jobs:
       - name: Run Tests
         run: npm test --prefix \react-demo\ # Targets the project folder
   deploy:
+    needs: test # Points to the identity of another job that must finish before this job (runs sequentially)
     runs-on: ubuntu-latest
     steps:
       - name: Download the code from the repository
