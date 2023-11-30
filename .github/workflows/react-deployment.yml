@@ -1,6 +1,6 @@
 # Run src/components/MainContent.test.jsx tests whenever you push or commit to Github
 name: Deploy React Demo Project
-on: [push, workflow_dispatch] # Add the option of triggering the workflow manually
+on: [workflow_dispatch] # Add the option of triggering the workflow manually
 jobs:
   test:
     runs-on: ubuntu-latest
