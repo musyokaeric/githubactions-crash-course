@@ -1,8 +1,19 @@
 name: Events Demo 1
 on:
   pull_request:
+    # Event Activity Types:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
     types: opened
   workflow_dispatch:
+  push:
+    # Event Filters:
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+    # Run this workflow if a push targets the main branch
+    branches:
+      - main # => main
+      - "dev-*" # All brances that start with 'dev-' => dev-new, dev-other
+      - "feat/**" # This allows for more slashes '/' => feat/new, feat/new/other
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
