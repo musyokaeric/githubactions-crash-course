@@ -25,6 +25,13 @@ jobs:
         run: npm ci --prefix \job-artefacts-outputs-demo\
       - name: Build website
         run: npm run build --prefix \job-artefacts-outputs-demo\
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files # Useful for retrieving those artifacts
+          path: | # where to find the files
+            dist 
+            package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
